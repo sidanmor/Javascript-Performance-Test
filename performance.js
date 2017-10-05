@@ -9,6 +9,11 @@ var commonsEditor = new Vue({
     el   : '#commonsEditor',
     data : {
         code : 'function foo(){ \n    return { val : "3" };\n}'
+    },
+    methods : {
+        updateCode : function () {
+            this.code = aceCommonsEditor.getValue()
+        }
     }
 });
 
@@ -88,6 +93,7 @@ var clear = function () {
 
     leftEditor.updateCode();
     rightEditor.updateCode();
+    commonsEditor.updateCode();
 };
 
 var running = new Vue({
